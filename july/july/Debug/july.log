@@ -1,3 +1,2 @@
-﻿  a.cpp
-C:\Users\soonyubi\project\algorithm\july\july\a.cpp(32,20): warning C4334: '<<': 32비트 시프트의 결과가 암시적으로 64비트로 변환됩니다. 64비트 시프트를 사용하시겠습니까?
+﻿  tarjan's algorithm.cpp
   july.vcxproj -> C:\Users\soonyubi\project\algorithm\july\Debug\july.exe
