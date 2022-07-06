@@ -14,47 +14,49 @@
 using namespace std;
 inline long long gcd(long long a, long long b) { return b ? gcd(b, a % b) : a; }
 
-int n, m;
-
+int cnt;
+int dfs_num[10001];
+int scc_num[10001];
+bool finished[10001];
+vector<int> stk;
+vector<vector<int>> SCC;
 vector<int> adj[10001];
 
-vector<vector<int>> SCC;
-
-int DFS_cnt = 1;
-int DFS_num[10001];
-int DFS_min[10001];
-int visited[10001];
-vector<int> stk;
-void dfs(int v)
+int dfs(int x)
 {
-	visited[v] = 1;
-	DFS_num[v] = DFS_min[v] = DFS_cnt++;
-	stk.push_back(v);
+	dfs_num[x] = ++cnt;
+	stk.push_back(x);
 
-	for (auto nv : adj[v])
+	int result = dfs_num[x];
+	for (auto nv : adj[x])
 	{
-		if (!DFS_num[nv]) dfs(nv);
-		if (visited[nv]) DFS_min[v] = min(DFS_min[v], DFS_min[nv]);
+		// 아직 방문하지 않음
+		if (!dfs_num[nv]) result = min(result, dfs(nv));
+		// 방문은 했는데 scc로 추출되지 않은 이웃
+		else if (!finished[nv]) result = min(result, dfs_num[nv]);
 	}
 
-	if (DFS_min[v] == DFS_num[v])
+	// 자신의 자손들이 갈 수 있는 가장 높은 조상이 자신이라면,
+	if (result == dfs_num[x])
 	{
 		SCC.emplace_back();
 		while (true)
 		{
-			int u = stk.back();
-			SCC.back().push_back(u);
-			visited[u] = 0;
-			stk.pop_back();
-
-			if (u == v) break;
+			int t = stk.back(); stk.pop_back();
+			SCC.back().push_back(t);
+			finished[t] = true;
+			scc_num[t] = SCC.size() - 1;
+			if (t == x) break;
 		}
 		sort(SCC.back().begin(), SCC.back().end());
+
 	}
+	return result;
 }
 void solve()
 {
-	cin >> n >> m;
+	int n, m; cin >> n >> m;
+
 	for (int i = 0; i < m; i++)
 	{
 		int u, v; cin >> u >> v;
@@ -63,9 +65,11 @@ void solve()
 
 	for (int i = 1; i <= n; i++)
 	{
-		if (!DFS_num[i]) dfs(i);
+		if (!dfs_num[i]) dfs(i);
 	}
+
 	sort(SCC.begin(), SCC.end());
+
 	cout << SCC.size() << "\n";
 	for (auto u : SCC)
 	{
