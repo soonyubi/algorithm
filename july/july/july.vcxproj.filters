@@ -30,7 +30,13 @@
     <ClCompile Include="kosaraju%27s algorithm.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="11281.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="tarjan%27s algorithm.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="4196.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
