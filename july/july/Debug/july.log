@@ -1,2 +1,6 @@
-﻿  16724.cpp
+﻿  2268.cpp
+C:\Users\soonyubi\project\algorithm\july\july\2268.cpp(50,14): warning C4244: '인수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\soonyubi\project\algorithm\july\july\2268.cpp(50,11): warning C4244: '인수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\soonyubi\project\algorithm\july\july\2268.cpp(53,23): warning C4244: '인수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\soonyubi\project\algorithm\july\july\2268.cpp(53,36): warning C4244: '인수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   july.vcxproj -> C:\Users\soonyubi\project\algorithm\july\Debug\july.exe
