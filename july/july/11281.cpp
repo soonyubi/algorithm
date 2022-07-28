@@ -14,51 +14,46 @@
 using namespace std;
 inline long long gcd(long long a, long long b) { return b ? gcd(b, a % b) : a; }
 
+int cnt;
+int dfs_num[100001];
+int scc_num[100001];
+vector<int> adj[100001];
+bool finished[100001];
+vector<int> stk;
+vector<vector<int>>SCC;
 int n, m;
 
-vector<int> adj[20001];
-
-vector<vector<int>> SCC;
-
-int DFS_cnt = 1;
-int DFS_num[20001];
-int DFS_min[20001];
-int SCC_num[200001];
-int visited[20001];
-vector<int> stk;
-
-int f(int x)
+int dfs(int v)
 {
-	if (x > 0) return x;
-	return -x + n;
-}
-void dfs(int v)
-{
-	visited[v] = 1;
-	DFS_num[v] = DFS_min[v] = DFS_cnt++;
+	dfs_num[v] = ++cnt;
 	stk.push_back(v);
 
+	int result = dfs_num[v];
 	for (auto nv : adj[v])
 	{
-		if (!DFS_num[nv]) dfs(nv);
-		if (visited[nv]) DFS_min[v] = min(DFS_min[v], DFS_min[nv]);
+		if (!dfs_num[nv]) result = min(result, dfs(nv));
+		else if (finished[nv]) result = min(result, dfs_num[nv]);
 	}
 
-	if (DFS_min[v] == DFS_num[v])
+	if (result == dfs_num[v])
 	{
 		SCC.emplace_back();
 		while (true)
 		{
-			int u = stk.back();
-			SCC.back().push_back(u);
-			visited[u] = 0;
-			stk.pop_back();
-
-			SCC_num[u] = SCC.size() - 1;
-			if (u == v) break;
+			int t = stk.back(); stk.pop_back();
+			SCC.back().push_back(t);
+			finished[t] = true;
+			scc_num[t] = SCC.size() - 1;
+			if (t == v) break;
 		}
-		//sort(SCC.back().begin(), SCC.back().end());
 	}
+	return result;
+}
+
+int f(int x)
+{
+	if (x > 0) return x;
+	else return -x + n;
 }
 
 void solve()
@@ -70,15 +65,15 @@ void solve()
 		adj[f(-u)].push_back(f(v));
 		adj[f(-v)].push_back(f(u));
 	}
-
+	cout << "yes\n";
 	for (int i = 1; i <= 2 * n; i++)
 	{
-		if(!DFS_num[i]) dfs(i);
+		if (!dfs_num[i]) dfs(i);
 	}
 
 	for (int i = 1; i <= n; i++)
 	{
-		if (SCC_num[i] == SCC_num[i + n]) // x -> ~x 이고 ~x -> x 인 상황
+		if (scc_num[i] == scc_num[i + n])
 		{
 			cout << "0\n";
 			return;
@@ -86,8 +81,13 @@ void solve()
 	}
 
 	cout << "1\n";
-	
 
+
+
+
+
+	// ~x -> x 인경우 x는 true
+	// x -> ~x인 경우 x는 false
 }
 int main()
 {
