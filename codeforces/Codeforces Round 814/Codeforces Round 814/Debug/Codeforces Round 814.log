@@ -1,0 +1,50 @@
+﻿  c.cpp
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(16,22): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(17,20): warning C4244: '초기화 중': 'double'에서 '__int64'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(37,42): warning C4244: 'return': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(48,17): warning C4244: '인수': '__int64'에서 'const unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(49,17): warning C4244: '인수': '__int64'에서 'const unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(53,21): warning C4244: '인수': '_Ty'에서 'const unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=__int64
+          ]
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(55,16): warning C4244: '인수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(61,9): warning C4244: '인수': '__int64'에서 'const unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(76,37): warning C4244: '인수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(76,27): warning C4244: '인수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(79,17): warning C4244: '인수': '__int64'에서 'const unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(100,58): warning C4244: '인수': '__int64'에서 'const unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.24.28314\include\utility(149,16): warning C4244: '초기화 중': '_Ty'에서 '_Ty1'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=__int64
+          ]
+          and
+          [
+              _Ty1=int
+          ]
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(100): message : 컴파일되는 함수 템플릿 인스턴스화 'std::pair<int,int>::pair<__int64&,_Ty&,0>(_Other1,_Other2) noexcept'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=__int64,
+              _Other1=__int64 &,
+              _Other2=__int64 &
+          ]
+C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Codeforces Round 814\c.cpp(100): message : 컴파일되는 함수 템플릿 인스턴스화 'std::pair<int,int>::pair<__int64&,_Ty&,0>(_Other1,_Other2) noexcept'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=__int64,
+              _Other1=__int64 &,
+              _Other2=__int64 &
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.24.28314\include\utility(149,1): warning C4244: '초기화 중': '_Ty'에서 '_Ty2'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=__int64
+          ]
+          and
+          [
+              _Ty2=int
+          ]
+  Codeforces Round 814.vcxproj -> C:\Users\soonyubi\project\algorithm\codeforces\Codeforces Round 814\Debug\Codeforces Round 814.exe
