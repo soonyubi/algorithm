@@ -1,0 +1,23 @@
+SELECT MEMBER_ID, MEMBER_NAME, GENDER, DATE_FORMAT(DATE_OF_BIRTH,"%Y-%m-%d")
+FROM MEMBER_PROFILE
+WHERE GENDER = "W" AND DATE_OF_BIRTH LIKE "%03%" AND TLNO IS NOT NULL
+ORDER BY MEMBER_ID
+
+/*
+LIKE OPERATOR 를 사용하면 %, _ PATTERN 을 사용할 수 있다. 
+%이름% --> 이름이라는 글자가 포함된 ROW 
+%이름 --> 이름으로 끝나는 ROW
+이름% --> 이름으로 시작하는 ROW
+_이름% --> 이름으로 시작하는데 앞에 1글자만 포함된 ROW 
+__이름% --> 이름으로 시작하는데 앞에 2글자만 포함된 ROW 
+
+*/
+
+SELECT MEMBER_ID, MEMBER_NAME, GENDER, DATE_FORMAT(DATE_OF_BIRTH,'%Y-%m-%d') AS DATE_OF_BIRTH
+FROM MEMBER_PROFILE
+WHERE MONTH(DATE_OF_BIRTH) = 3 AND GENDER = 'W' AND TLNO IS NOT NULL
+ORDER BY MEMBER_ID
+/*
+MONTH() 라는 내장함수를 사용해서도 답을 구할 수 있음 
+
+*/
