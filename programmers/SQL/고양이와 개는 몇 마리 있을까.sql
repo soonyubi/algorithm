@@ -1,0 +1,11 @@
+SELECT ANIMAL_TYPE, COUNT(*)
+FROM ANIMAL_INS
+GROUP BY ANIMAL_TYPE
+ORDER BY ANIMAL_TYPE
+
+/*
+
+특정 값을 먼저 출력하는 방법은 모르겠음 
+CAT < DOG 이므로 정렬시켰음 
+
+*/
